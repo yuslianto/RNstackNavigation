@@ -6,10 +6,14 @@ import {
   createBottomTabNavigator,
 } from "react-navigation";
 
+import { Image } from 'react-native';
+
 import HomeScreen from "./src/home";
 import UserScreen from "./src/user";
 import LogoTitle from "./src/logo";
 import SideMenu from "./src/SideDrawer";
+
+import IconAnimal from "./src/images/logo-animal.png";
 
 const AppNavigator = createBottomTabNavigator({
   Home: HomeScreen,
@@ -27,7 +31,25 @@ const AppNavigator = createBottomTabNavigator({
     labelStyle: {
       fontSize: 20,
     }
-  }
+  },
+  defaultNavigationOptions: ({navigation})=>({
+    tabBarIcon: ({})=>{
+      return <Image
+        source={IconAnimal}
+        style={{
+          width: 20,
+          height: 20
+        }}
+      />
+    },
+    tabBarOnPress: ({navigation, defaultHandler})=>{
+      if (navigation.state.key=='Users') {
+        navigation.navigate('Users')
+      } else {
+        defaultHandler();
+      }
+    },
+  }),
 });
 
 /**
