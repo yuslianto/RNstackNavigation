@@ -14,7 +14,42 @@ import LogoTitle from "./src/logo";
 import SideMenu from "./src/SideDrawer";
 
 import IconAnimal from "./src/images/logo-animal.png";
+import SettingScreen from "./src/setting";
 
+const HomeStack = createStackNavigator({
+  Home: HomeScreen,
+  Users: UserScreen,
+});
+
+const SettingStack = createStackNavigator({
+  Setting: SettingScreen,
+  Users: UserScreen,
+});
+
+/**
+ * this is example if you combine stack navigator wit tab navigator
+ */
+/**
+ 
+const AppNavigator = createBottomTabNavigator({
+  Home: HomeStack,
+  Setting: SettingStack,
+});
+*/
+
+/**
+ * this is example if want combine stack with drawer navigation
+ */
+
+const AppNavigator = createDrawerNavigator({
+  Home: HomeStack,
+  Setting: SettingStack,
+})
+
+
+
+/**
+ * 
 const AppNavigator = createBottomTabNavigator({
   Home: HomeScreen,
   Users: UserScreen,
@@ -51,6 +86,7 @@ const AppNavigator = createBottomTabNavigator({
     },
   }),
 });
+ */
 
 /**
 const AppNavigator = createDrawerNavigator({

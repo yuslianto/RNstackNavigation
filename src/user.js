@@ -47,6 +47,10 @@ class UserScreen extends Component {
                     onPress={ ()=> this.props.navigation.goBack() }
                     color="#841584"
                 />
+                <Button
+                    title="Open Side Drawer"
+                    onPress={ ()=> this.props.navigation.openDrawer()}
+                />
             </View>
         );
     }

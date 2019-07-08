@@ -50,7 +50,14 @@ static navigationOptions = ({navigation}) => {
                         userId : '12',
                         userName : 'Yusli',
                         UserLastName : 'Anto',
-                    }) }                />
+                    }) }                
+                />
+                <Button
+                    title="Go to seting screen"
+                    onPress={ ()=> this.props.navigation.navigate('Setting',{
+                        message : 'Hello Yuslianto',
+                    }) }
+                />
                 <Button
                     title="Open Side Drawer"
                     onPress={ ()=> this.props.navigation.openDrawer()}
